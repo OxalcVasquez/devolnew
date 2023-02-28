@@ -6,5 +6,5 @@ public interface BaseService<T> {
     List<T> getAll();
     T save(T entity);
     T update(T entity);
-    void delete(String id);
+    boolean delete(String id);
 }

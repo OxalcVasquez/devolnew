@@ -34,8 +34,8 @@ public class ClientService implements BaseService<Client> {
     }
 
     @Override
-    public void delete(String id) {
-        clientRepository.delete(id);
+    public boolean delete(String id) {
+        return clientRepository.delete(id);
     }
 
 }

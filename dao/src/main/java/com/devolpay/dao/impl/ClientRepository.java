@@ -32,9 +32,14 @@ public class  ClientRepository implements BaseRepository<Client> {
     }
 
     @Override
-    public void delete(String id) {
-        Query query = new Query(Criteria.where("id").is(id));
-        mongoTemplate.remove(query, Client.class);
+    public boolean delete(String id) {
+        Client client = mongoTemplate.findById(id, Client.class);
+        if (client!=null){
+            Query query = new Query(Criteria.where("id").is(id));
+            mongoTemplate.remove(query, Client.class);
+            return true;
+        }
+        return false;
     }
 
     @Override

@@ -36,7 +36,7 @@ public class ClienControllerSaveTest {
     }
 
     @Test
-    public void createClient(){
+    public void saveClient(){
         HttpHeaders headers = new HttpHeaders();
         headers.setContentType(MediaType.APPLICATION_JSON);
         headers.setAccept(List.of(MediaType.APPLICATION_JSON));
